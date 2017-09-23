@@ -1,4 +1,6 @@
-db
+#Custom
+webtoon/
+db/
 .idea/
 *.gitignore.swp
 *.python-version
