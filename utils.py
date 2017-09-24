@@ -47,7 +47,8 @@ def get_page_episode_list(webtoon, page=1):
                 url_thumbnail=item.select_one('td a img').attrs.get('src'),
                 title=item.select_one('td.title a').text,
                 rating=item.select_one('div.rating_type strong').text,
-                created_date=item.select_one('td.num').text)
+                created_date=item.select_one('td.num').text
+        )
 
         for item
         in webtoon_page_episodes

@@ -18,12 +18,13 @@ class Episode:
         self._title = title
         self._rating = rating
         self._created_date = created_date
+        self.num_images = 0
 
-        self.thumbnail_dir = f'webtoon/{self.webtoon.title}_thumbnail'
-        self.image_dir = f'webtoon/{self.webtoon.title}_images/{self.no}'
-        # ex) webtoon/669233_images/1/1.jpg
-        # ex) webtoon/669233_images/1/2.jpg
-        self.save_thumbnail()
+        self.thumbnail_dir = f'webtoon/{self.webtoon.title_id}_thumbnail'
+        self.image_dir = f'webtoon/{self.webtoon.title_id}_images/{self.no}'
+        # ex) webtoon/마왕이 되는 중2야_images/1/1.jpg
+        # ex) webtoon/마왕이 되는 중2야_images/1/2.jpg
+        # self.save_thumbnail()
 
     @property
     def webtoon(self):
@@ -109,6 +110,8 @@ class Episode:
             }
             image_file_data = requests.get(img_url, headers=headers).content
             open(self.image_dir + f'/{index + 1}.jpg', 'wb').write(image_file_data)
+        else:
+            self.num_images = index + 1
 
     def _make_html(self):
         pass
