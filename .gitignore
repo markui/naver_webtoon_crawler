@@ -4,6 +4,7 @@ db/
 .idea/
 *.gitignore.swp
 *.python-version
+html/[0-9]*
 
 reated by https://www.gitignore.io/api/linux,macos,python,pycharm
 
